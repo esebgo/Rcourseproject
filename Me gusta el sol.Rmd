@@ -37,7 +37,7 @@ We foud that happiness was positively related to sushine hours(`r coef(modelo[2]
 
 ```{r}
 library(visreg)
-visreg(modelo, gg=T)
+visreg(modelo, gg=T,band=TRUE)
 ```
 
 ```{r}
