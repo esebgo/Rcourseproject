@@ -1,0 +1,54 @@
+---
+title: "Me gusta el sol"
+author: "Esther Sebastian-Gonzalez"
+date: "28/3/2019"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+csl: ecology-letters.csl
+bibliography: references.bib
+---
+
+##INTRODUCTION
+A mi me gusta mucho el sol, ¿y a tí?
+
+##METHODS
+
+```{r}
+datos <- read.table("data.txt", header=T)
+```
+
+$$
+y=a+bx
+$$
+
+```{r}
+modelo <- lm(happiness~sunshine, data=datos)
+```
+
+
+we interviewed `r nrow(datos)` people and fitted a linear model
+
+##RESULTS
+
+We foud that happiness was positively related to sushine hours(`r coef(modelo[2])`).
+
+```{r}
+library(visreg)
+visreg(modelo)
+```
+
+```{r}
+library(xtable)
+library(knitr)
+kable(xtable(modelo))
+```
+
+
+##DISCUSION
+Sunshine is good for happiness
+
+##REFERENCES
+[@Rezende_2007; @Young_2018]
+
