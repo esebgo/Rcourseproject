@@ -17,7 +17,7 @@ A mi me gusta mucho el sol, ¿y a tí?
 
 ```{r}
 datos <- read.table("data.txt", header=T)
-datos[-12,]
+datos[-c(12, 57),]
 ```
 
 $$
